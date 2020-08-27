@@ -25,7 +25,7 @@ class Register extends Component {
 
     handleSubmit = (event) => {
         //console.log("Username: " + this.state.username);
-        //console.log("Password: " + this.state.password); //changed
+        //console.log("Password: " + this.state.password); //ch
         //console.log("Role: " + this.state.role);
 
         // to save data to db server
