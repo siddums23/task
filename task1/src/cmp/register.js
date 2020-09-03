@@ -4,7 +4,7 @@ class Register extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { username: '', password: '', role: '', selection: '' };
+        this.state = { username: '', password: '', role: 'admin', selection: '' };
     }
 
     usernameChangeHandler = (event) => {
@@ -23,13 +23,13 @@ class Register extends Component {
         this.setState({ selection: event.target.value });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = () => {
         //console.log("Username: " + this.state.username);
         //console.log("Password: " + this.state.password); //ch
         //console.log("Role: " + this.state.role);
 
         // to save data to db server
-        fetch('http://localhost:9000/testAPI', {
+        fetch('http://localhost:9000/testAPI_mongo', {
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -40,7 +40,8 @@ class Register extends Component {
             result.json()
             console.log("Added Succesfully");
             alert("Added Succesfully");
-        }).then((err) => console.log(err))
+            window.location.reload(false);
+        })
 
     }
 

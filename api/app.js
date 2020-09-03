@@ -7,6 +7,7 @@ var cors = require("cors");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require("./routes/testAPI");
+var testAPIMongoRouter = require("./routes/testAPI_mongo");
 var app = express();
 
 // view engine setup
@@ -22,6 +23,7 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/testAPI', testAPIRouter);
+app.use('/testAPI_mongo', testAPIMongoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
